@@ -1,13 +1,17 @@
 description: >
-  Sample example description.
 # Provide a use-case based example for using this orb.
 # Everything in the `usage` section will be displayed in the orb registry.
 # Comments are not retained.
 usage:
   version: 2.1
   orbs:
-    <orb-name>: <namespace>/<orb-name>@1.2.3
+    secret-manager: rhems-japan/secret-manager@x.y.z
+  jobs:
+    your-job:
+      machine: true
+      steps:
+        - secret-manager/get-gcp-secret
   workflows:
-    use-my-orb:
+    your-workflow:
       jobs:
-        - <orb-name>/<job-name>
+        - your-job
